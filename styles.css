@@ -10,8 +10,8 @@ body, html {
     background-image: url('wizard_background.png');
     background-size: cover;
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
 }
 
 #wizardAvatar {
