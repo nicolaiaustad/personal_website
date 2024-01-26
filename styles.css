@@ -41,7 +41,7 @@ body, html {
     background-color: rgb(191, 175, 155);
     border-radius: 15px;
     border-color: rgb(80, 34, 204);
-    position: center;
+    position: absolute;
     /* left: 5%;
     top: 50%;
     border: 3px solid rgb(72, 32, 11); */
@@ -52,6 +52,7 @@ body, html {
 
 .cv-details {
     position: absolute;
+    color: rgb(191, 175, 155);
     /* Style for CV details popup */
 }
 
