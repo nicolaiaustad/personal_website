@@ -25,7 +25,10 @@ body, html {
     height: 200px;
     background-color: rgb(162, 158, 153);
     border-radius: 10px;
+    border-color: beige;
     position: relative;
+    
+    border: 3px solid #73AD21;
     /* Set appropriate size and position */
 
     /* Add more styling and positioning */
