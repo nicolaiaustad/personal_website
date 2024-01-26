@@ -7,11 +7,11 @@ body, html {
 }
 
 .library-background {
-    background-image: url('library_bg.png');
+    background-image: url('wizard_background.png');
     background-size: cover;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 110%;
 }
 
 #wizardAvatar {
