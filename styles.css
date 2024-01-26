@@ -21,9 +21,13 @@ body, html {
 }
 
 .book {
-    width: 100px;
-    height: 150px;
-    background-color: rgb(89, 50, 11);
+    width: 150px;
+    height: 200px;
+    background-color: rgb(162, 158, 153);
+    border-radius: 10px;
+    position: relative;
+    /* Set appropriate size and position */
+
     /* Add more styling and positioning */
 }
 
