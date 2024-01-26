@@ -35,6 +35,21 @@ body, html {
     /* Add more styling and positioning */
 }
 
+.button {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(191, 175, 155);
+    border-radius: 15px;
+    border-color: rgb(80, 34, 204);
+    position: center;
+    /* left: 5%;
+    top: 50%;
+    border: 3px solid rgb(72, 32, 11); */
+    /* Set appropriate size and position */
+
+    /* Add more styling and positioning */
+}
+
 .cv-details {
     position: absolute;
     /* Style for CV details popup */
