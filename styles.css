@@ -28,7 +28,7 @@ body, html {
     border-color: rgb(72, 32, 11);
     position: relative;
     left: 5%;
-    top: 5%;
+    bottom: 95%;
     border: 3px solid rgb(72, 32, 11);
     /* Set appropriate size and position */
 
