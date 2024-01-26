@@ -9,6 +9,7 @@ body, html {
 .library-background {
     background-image: url('wizard_background.png');
     background-size: cover;
+    background-position: center; /* Center the background image */
     position: relative;
     width: 80%;
     height: 80%;
