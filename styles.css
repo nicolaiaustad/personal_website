@@ -51,8 +51,9 @@ body, html {
 }
 
 .cv-details {
-    position: absolute;
+    position: center;
     color: rgb(191, 175, 155);
+    font-size: 20px;
     /* Style for CV details popup */
 }
 
