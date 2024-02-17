@@ -1,0 +1,799 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    /* overflow: hidden; */
+    overflow: auto;
+}
+
+
+
+.background {
+    /* background-image: url(''); Adjust with actual path or use a solid/gradient background */
+    background-size: cover;
+    background-position: center; 
+    height: 100vh;
+    position: relative;
+    /* display: flex; */
+    justify-content: center; 
+    /* align-items: flex-start;  */
+    background-color: #ffffff; /* Fallback color */
+    
+    
+    width: 100%; /* Ensure it spans the width of the viewport */
+}
+
+hr {
+  height:1px;
+  border-width:0px;
+  margin-top: -5px;
+  border-color: rgb(255, 255, 255);
+  background-color:#000000;
+  opacity: 0.1;
+}
+
+
+
+.centeredImage {
+    max-width: 550px; 
+    max-height: 550px; 
+    
+    box-shadow: 10px 100px 10px  rgba(0, 0, 0, 0.0);
+                
+    object-fit: cover;
+    position: absolute;
+    top: 47%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    
+} 
+
+.frame {
+  width: 320px; /* Box width */
+  height: 333px; /* Box height */
+  background-color: #faf1f1; /* Box color */
+  top: 40%;
+  left: 64%;
+  position: absolute;
+  box-shadow: 10px 40px 8px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+  
+  /* display: flex;  */
+  /*  */
+  
+  border-radius: 5px; /* Optional: for rounded corners */
+} 
+
+.experienceBall {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #201e1e; 
+    background-color:  #f9e4e4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+/* 
+    background: rgba(222, 57, 57, 0.3); 
+    backdrop-filter: blur(20px); 
+    border: 2px solid rgba(6, 5, 5, 0.5); 
+    box-shadow: 0 10px 20px rgba(86, 39, 39, 0.2), inset 0 100px 15px rgba(255, 0, 0, 0.6);
+    box-shadow: 0 4px 6px rgba(211, 54, 54, 0.1), 
+                inset 0 2px 4px rgba(86, 37, 37, 0.6); */
+
+    position: absolute;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, top 2s linear;
+    animation: drift 3s infinite alternate ease-in-out;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 15px; /* Initialize font size to hide text */
+    z-index: 0; 
+    font-family: 'DM Sans', sans-serif;
+    font-weight:700;
+    
+
+
+}
+
+#ball1{
+  width: 180px;
+  height: 180px;
+  
+  top: 350px; /* Below Ball 3 */
+  left: 260px;
+  font-size: 40px;
+}
+
+
+#ball2{
+  width: 150px;
+  height: 150px;
+  top: 510px; /* Directly to the right of Ball 3 */
+  left: 360px; /* Ball 3 width + a bit more */
+  font-size: 27px;
+}
+
+
+#ball3{
+  width: 110px;
+  height: 110px;
+  top: 411px; /* Start near the top */
+  left: 440px; /* Start near the left edge */
+  font-size: 25px;
+
+}
+
+
+#ball4{
+  width: 100px;
+  height: 100px;
+  top: 525px; /* Below Ball 3, next to Ball 1 */
+  left: 258px; /* Enough space to not overlap with Ball 1 */
+  font-size: 21px;
+
+}
+
+
+#ball5{
+  width: 80px;
+  height: 80px;
+  top: 333px; /* Align with Balls 1 and 4 */
+  left: 425px; 
+  font-size: 23px;
+
+}
+
+
+.experienceBall span {
+    color: rgb(0, 0, 0); 
+    /* //font-size: 20px;  */
+    text-align: center;
+}
+
+
+
+.experienceBall:hover {
+    transform: scale(1.5); /* Adjust scaling factor as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    box-shadow: 0 0 30px rgb(196, 51, 51);
+    z-index: 20; 
+}
+
+
+.experienceBall:hover::before {
+  opacity: 1; /* Ensure the pseudo-element is fully visible on hover */
+}
+
+.navbar {
+  /* position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: #ffffff; 
+ 
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);  */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  
+}
+ .navbar ul{
+  list-style-type: none;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: flex-end; */
+  justify-content: flex-start;
+  
+  
+}
+
+
+.website-link {
+  display: inline-block; /* Or 'block' if you prefer */
+  padding: 8px 15px; /* Adjust padding as needed */
+  margin-right: auto; /* Keeps it on the left */
+  background-color: #ffffff; /* Light grey background, adjust as needed */
+  border: 0px solid #dcdcdc; /* Light grey border, adjust as needed */
+  border-radius: 5px; /* Rounded corners */
+  color: #000000; /* Text color */
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Inter, sans-serif;
+  font-family: DM Sans, sans-serif;
+
+
+  text-decoration: none; /* Removes underline */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.website-link .highlight {
+  color: #ff0000; /* Change color of 'austad' */
+}
+
+.website-link:hover, .website-link:focus {
+  /* background-color: #f5e2e2;  */
+  background-color: transparent; /* Slightly darker on hover/focus */
+
+  transform: translateY(-2px); /* Slight lift effect */
+  text-shadow: none; /* Optional: Remove if you don't want text shadow on hover */
+}
+
+
+
+.navbar ul li a {
+  font-size: 15px;
+  text-decoration: none;
+  color: #000000;
+  opacity: 1;
+  padding: 0 15px;
+  margin: 0 30px;
+  position: relative;
+  transition: color 0.2s ease, opacity 1s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  text-shadow: none; /* No shadow by default */
+  display: inline-block; 
+  font-family: 'DM Sans', sans-serif;
+  font-weight:700;
+}
+
+.navbar ul li a:hover, .navbar ul li a:focus {
+  opacity: 1; 
+  /* box-shadow: 0 4px 30px rgba(197, 15, 15, 0.2);  */
+  text-shadow: 0 0 25px #ff0000;
+  transform: translateY(-10px);
+  transform: scale(1.1);
+}
+
+/* 
+.navbar ul li a:after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: -11px;
+  height: 3px;
+  background-color: #000000;
+  opacity: 0.0;
+  transition: opacity 0.3s ease;
+  
+} */
+/* 
+.navbar ul li a:hover:after {
+  opacity: 1;
+  background-color: hsl(0, 0%, 0%);
+  box-shadow: 0 -20px 25px rgb(255, 0, 0); 
+
+} */
+
+
+#staticTitle {
+  position: absolute;
+  top: 13%;
+  left: 27%;
+  transform: translateX(-50%);
+  font-size: 2.3em;
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  font-weight:700;
+}
+
+#staticTitle .highlight {
+  color: #ff0000; /* Change color of 'Austad' */
+  /* Add more styles if needed */
+}
+
+
+
+#dynamicTitle {
+    position: absolute;
+    top: 23%;
+    left: 27%;
+    transform: translateX(-50%);
+    font-size: 1.6em;
+    color: #000000;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+}
+
+/* 
+.cursor {
+  opacity: 1;
+  animation: blink 1.1s infinite;
+  color: rgb(255, 0, 0);
+} */
+
+.cursor {
+  display: inline-block;
+  width: 30px; /* Diameter of the circle */
+  height: 30px; /* Diameter of the circle */
+  border-radius: 50%; 
+  background-color: #ff0000; /* Color of the circle */
+  vertical-align: middle; /* Aligns with text */
+  margin-left: 5px; /* Space from the text */
+  margin-bottom: 3px;
+  opacity: 1; /* Fully visible */
+  animation: blink 1.1s infinite; 
+}
+
+
+@keyframes blink {
+  50% { opacity: 0; }
+} 
+
+#titleContainer {
+  text-align: center; /* Center the title */
+  font-size: 2em; /* Adjust size as needed */
+  color: #000000; /* Title color */
+}
+
+
+.dynamicDot {
+  color: #ff0000; 
+} 
+
+
+.about-section{
+  padding: 20px;
+  margin: 60px auto 0; /* Adjust as needed */
+  /* max-width: 100%;  */
+  display: flex;
+  flex-direction: column; /* This ensures everything is stacked vertically */
+  align-items: center; /* Center the content */
+  text-align: center; /* Center the text */
+  margin-bottom: 233px;
+}
+
+/* Container for the boxes to control their layout separately from the title */
+.boxes-container {
+  width: 100%; /* Take up full width of .about-section */
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Center boxes horizontally */
+  margin-top: 20px; /* Space between title and boxes */
+
+
+  /* max-width: 1000px; */
+   /* flex-wrap: wrap; */
+}
+
+.about-box {
+  width: 300px; /* Square size */
+  height: 300px; /* Square size */
+  margin: 30px; /* Space between boxes */
+  display: flex;
+  justify-content: center; 
+  
+  /* flex-wrap: wrap; */
+  /* background-color: #f9e4e4; */
+  background-image: linear-gradient(to bottom right, #efe3e3, #ffffff);
+
+  
+  border-radius: 5%;
+  border: 0px solid #000; /* Example border */
+  transition: transform 0.4s ease, box-shadow 0.3s ease, top 2s linear;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), /* Optional shadow */
+   -10px -10px 20px rgba(2, 2, 2, 0.0); 
+  /* position: relative; */
+}
+
+
+.about-box:hover {
+  transform: scale(1.05); /* Adjust scaling factor as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  /* box-shadow: 0 0 30px rgb(242, 4, 4); */
+  z-index: 20; 
+  background-image: linear-gradient(to bottom right, #f29fad, #f6eef1);
+  
+}
+
+h2 {
+  font-size: 60px; /* Adjust size as needed */
+  color: #000000; /* Adjust color as needed */
+  font-family: 'DM Sans', sans-serif;
+  font-weight:700;
+  text-align: center;
+
+  
+}
+
+.about-box h3 {
+  font-size: 30px; /* Adjust as needed */
+  color: #993434; /* Adjust color as needed */
+  margin: 30px 0px -50px 0; /* Adjust spacing as needed */
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+
+
+}
+
+
+p {
+  font-size: 15px;
+  color: #594b4b;
+ 
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  
+  max-width: 240px; 
+  margin: 30px 0px -50px 0; 
+  text-emphasis: left;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, top 2s linear;
+
+  
+  
+
+}
+
+
+.cv-highlights-section {
+  background-color: #ffffff;
+  padding: 0px;
+  top: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content vertically */
+  width: 100%;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.column-titles {
+  display: flex;
+  width: 85%; /* Match the .cv-boxes width */
+  justify-content: space-around;
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
+
+.column-title {
+  
+  width: 100%; /* Match the .cv-column width */
+  text-align: center;
+  font-size: 35px; /* Adjust as needed */
+  color: #2e2525; /* Adjust color as needed */
+  margin: 0px 0px 0px 0; 
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.cv-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Evenly space the boxes horizontally */
+  gap: 30px; /* Space between boxes */
+  width: 80%;
+  margin-top: 20px; /* Space between title and boxes */
+
+}
+
+.cv-box {
+  width: calc(50% - 30px); /* Adjust width for 2 columns, accounting for gap */
+  min-height: 300px; /* Minimum height for each box */
+  
+  padding: 0px;
+  box-sizing: border-box; /* Include padding and border in the box's width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px; /* Space between rows */
+  position: relative;
+  background-image: linear-gradient(to bottom right, #efe3e3, #ffffff);
+  border-radius: 5%;
+  border: 0px solid #000; /* Example border */
+  transition: transform 0.4s ease, box-shadow 0.3s ease, top 2s linear;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), /* Optional shadow */
+   -10px -10px 20px rgba(2, 2, 2, 0.0); 
+}
+
+
+.cv-box:hover {
+  transform: scale(1.05); /* Adjust scaling factor as needed */
+  /* font-size: 16px; Adjust font size as needed */
+  /* box-shadow: 0 0 30px rgb(242, 4, 4); */
+  z-index: 20; 
+  background-image: linear-gradient(to bottom right, #f29fad, #f6eef1);
+  
+}
+
+@media (max-width: 768px) {
+  .cv-box {
+      width: 100%; /* Full width for smaller screens */
+  }
+}
+
+
+
+
+.cv-box h4{
+  font-size: 30px; /* Adjust as needed */
+  color: #993434; /* Adjust color as needed */
+  margin: 0px 0px 0px 0; 
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 25%;
+  left: 6%;
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+
+.cv-box h4:after {
+
+  content: '';
+  display: block; /* Make it a block to take up the full width */
+  width: 90%; /* Adjust the width of the line as needed */
+  height: 1px; /* Thickness of the line */
+  background-color: #dcdcdc; /* Color of the line */
+  opacity: 1; /* Make the line subtle */
+  position: absolute;
+  bottom: 0; /* Position at the bottom of the h4 element */
+  left: 5%; /* Center the line according to the h4 width */
+  
+}
+
+.cv-box h5{
+  font-size: 17px; /* Adjust as needed */
+  color: #000000; /* Adjust color as needed */
+  margin: 0px 0px 0px 0; 
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 10%;
+  left: 6%;
+
+}
+
+
+.cv-box p{
+  font-size: 15px; /* Adjust as needed */
+  color: #594b4b; /* Adjust color as needed */
+  margin: 0px 0px 0px 0; 
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  text-align: left;
+  max-width: 80%;
+
+}
+
+#fillbox {
+  color: transparent;
+  background-color: transparent;
+  opacity: 0;
+}
+
+
+.contact-section {
+  padding: 60px 40px; 
+  padding-top: 5%;
+  background-color: #efe9e9;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 160px auto;
+
+  background-image: linear-gradient(to bottom right, #efe3e3, #ffffff);
+
+  position: relative;
+}
+/* 
+.form-group textarea {
+  width: calc(100% - 20px);
+  padding: 15px;
+  margin-top: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  resize: vertical; 
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+} */
+/* 
+#contact-form button {
+  padding: 12px 30px;
+  margin-top: 20px;
+  background-color: #db5034;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;
+} */
+/* 
+.output_box {
+  background-color: #ecbf94;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  
+}
+
+
+#contact-form button:hover {
+  background-color: #e29774;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+} */
+
+
+.contact-info {
+  margin-top: 0px;
+  /* justify-content: center; */
+  font-family: 'DM Sans', sans-serif;
+  
+
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  padding: 20px 0px; /* Adjust as needed */
+}
+
+.contact-info h6 {
+  color: #333; /* Subtle, professional text color */
+  font-size: 16px; /* Matching the form's text size for consistency */
+  margin-top: 0;
+  font-weight: 200;
+}
+
+.contact-info a {
+  color: #000000; /* A color that stands out, yet fits the overall design */
+  text-decoration: none; /* Removes the underline to keep it clean */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-info a:hover {
+  color: #dd4545; /* Darker shade of blue for hover state */
+}
+
+
+.section-divider {
+  height:1px;
+  
+  width: 80%;
+  margin: auto;
+  border-color: rgb(255, 255, 255);
+  background-color:#000000;
+  opacity: 0.1;
+}
+
+
+
+
+
+
+
+.chat_interface {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.chat_form {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px; /* Space between the input field and the submit button */
+  border: 3px solid #ccc;
+  border-radius: 50px;
+  /* background-image: linear-gradient(to right, #efe3e3, #ffffff); */
+  background-color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+
+  
+}
+
+.submit-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #c7c7c7;
+  color: rgb(0, 0, 0);
+  border: 10px;
+  border-width: 20px;
+  border-color: #000000;
+  border-radius: 40px;
+  cursor: pointer;
+  width: 135px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  
+}
+
+.submit-btn:hover {
+  background-color: #da7676;
+}
+
+
+
+.output_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -40px;
+  
+
+  
+}
+
+.gptOutput {
+  margin-top: 30px;
+  flex-grow: 1; 
+  border: 3px solid #ccc;
+  border-radius: 25px; 
+  padding: 10px;
+  height: 100px; /* Example height */
+  background-color: #ffffff;
+  margin-right: 10px; 
+  width: 80%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+  resize: none; 
+  overflow: auto; /
+
+}
+
+
+.submit_response {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #c7c7c7;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  width: 135px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 100;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  
+  /* line-height: 50px; */
+
+}
+
+.submit_response:hover {
+  background-color: #da7676;
+}
+
+.contact-section .highlight {
+  color: #ff0000; /* Change color of 'austad' */
+}
