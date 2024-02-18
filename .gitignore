@@ -137,3 +137,5 @@ dist
 .env
 node_modules
 .styles
+# Local Netlify folder
+.netlify

@@ -1,0 +1,6 @@
+[build]
+  publish = "public" # Or your build directory
+  functions = "functions" # Your functions directory
+
+[dev]
+  functions = "functions" # For local testing
