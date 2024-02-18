@@ -1,6 +1,6 @@
 // functions/process-input.js
-// const { Configuration, OpenAIApi } = require("openai");
-const OpenAIApi = require('openai').default;
+const { Configuration, OpenAIApi } = require("openai");
+// const OpenAIApi = require('openai').default;
 
 
 exports.handler = async (event) => {
