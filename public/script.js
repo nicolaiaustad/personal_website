@@ -1,7 +1,5 @@
 
 
-// // Initial call to start the effect
-// document.addEventListener('DOMContentLoaded', updateText);
 
 
 const titles = ['a Nanotechnologist', 'an Entrepreneur', 'a Public Speaker', 'a Developer'];
@@ -88,11 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
     });
     
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
     const aboutLink = document.querySelector('a[href="#about"]');
     aboutLink.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent the default anchor behavior
@@ -100,31 +93,20 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutLink = document.querySelector('a[href="#contact"]');
-    aboutLink.addEventListener('click', (e) => {
+    const contactLink = document.querySelector('a[href="#contact"]');
+    contactLink.addEventListener('click', (e) => {
         e.preventDefault(); // Prevent the default anchor behavior
-        const aboutSection = document.getElementById('contact');
-        aboutSection.scrollIntoView({ behavior: 'smooth' });
+        const contactSection = document.getElementById('contact');
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+
     });
 
-    
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutLink = document.querySelector('a[href="http://www.nicolaiaustad.com"]');
-    aboutLink.addEventListener('click', (e) => {
+    const websiteLink = document.querySelector('a[href="http://www.nicolaiaustad.com"]');
+    websiteLink.addEventListener('click', (e) => {
         
     });
 
-    
+
 });
 
 
@@ -137,69 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // script.js
-
-// document.getElementById('inputForm').addEventListener('submit', async function(e) {
-//     e.preventDefault();
-//     const userInput = document.getElementById('userInput').value;
-    
-//     try {
-//       const response = await fetch('/process-input', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ userInput }),
-        
-//       });
-  
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok');
-//       }
-  
-//       const data = await response.json();
-//       document.getElementById('response').textContent = data.response;
-//     } catch (error) {
-//       console.error('Error:', error);
-//     }
-//   });
 
 
-
-
-
-
-//   document.addEventListener('DOMContentLoaded', function() {
-//     const form = document.getElementById('inputForm');
-//     if (form) {
-//         form.addEventListener('submit', async function(e) {
-//             console.log("LOG!")
-//             e.preventDefault();
-//             const userInput = document.getElementById('userInput').value;
-    
-//             try {
-//             const response = await fetch('http://localhost:5504/process-input', {
-//                 method: 'POST',
-//                 headers: {
-//                 'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify({ userInput }),
-                
-//             });
-        
-//             if (!response.ok) {
-//                 throw new Error('Network response was not ok');
-//             }
-        
-//             const data = await response.json();
-//             // document.getElementById('response').textContent = data.response;
-//             document.getElementById('gptOutput_id').textContent = data.response;
-//             } catch (error) {
-//             console.error('Error:', error);
-//             }})
-//         }
-
-//     });
 
 
 function typeResponse(responseText, targetElementId, typingSpeed) {
@@ -227,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const userInput = document.getElementById('userInput').value;
     
             try {
-                const response = await fetch('http://localhost:5505/process-input', {
+                const response = await fetch('http://localhost:5506/process-input', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -258,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.getElementById('gptOutput_id').value;
     
         try {
-            const response = await fetch('http://localhost:5505/submit-form', {
+            const response = await fetch('http://localhost:5506/submit-form', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
