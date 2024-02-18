@@ -136,3 +136,4 @@ dist
 
 .env
 node_modules
+.styles
