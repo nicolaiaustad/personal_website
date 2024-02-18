@@ -135,3 +135,4 @@ dist
 # The file I dont want included
 
 .env
+node_modules
