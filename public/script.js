@@ -148,7 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const userInput = document.getElementById('userInput').value;
     
             try {
-                const response = await fetch('http://localhost:5506/process-input', {
+                // const response = await fetch('http://localhost:5506/process-input', {
+                const response = await fetch('/.netlify/functions/process_input', {
+                
+                    
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -179,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const message = document.getElementById('gptOutput_id').value;
     
         try {
-            const response = await fetch('http://localhost:5506/submit-form', {
+            const response = await fetch('/.netlify/functions/send_email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
