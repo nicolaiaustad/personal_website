@@ -10,9 +10,9 @@ exports.handler = async (event) => {
 
   try {
     const body = JSON.parse(event.body);
-    const openai = new OpenAIApi(new Configuration({
+    const openai = new OpenAIApi({
       apiKey: "OPEN_AI_KEY",
-    }));
+    });
 
     const response = await openai.ChatCompletion.create({
       messages: [{ role: "system", content: "You are an intelligent, yet funny, assistant that creates messages with a tiny hint of old fashioned British style. Keep the message concise and short. Maxiumum one paragraph and integrate a suitable joke in it. The prompt will be given in the following format: sender's name, sender's email, keywords for the message. The receiver of the message shall be Nicolai Austad and the sender's email addresse must be included in the end if provided. "},
