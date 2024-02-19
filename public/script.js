@@ -131,6 +131,7 @@ function typeResponse(responseText, targetElementId, typingSpeed) {
             targetElement.value += responseText.charAt(i);
             i++;
             setTimeout(typeChar, typingSpeed);
+            console.log(targetElement.value);
         }
     }
     typeChar(); 
@@ -164,8 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
         
                 const data = await response.json();
+
+                console.log(data.message); // Adjusted to match the structure returned by your serverless function
                 document.getElementById('gptOutput_id').value = '';
-                typeResponse(data.response, 'gptOutput_id', 50);
+                typeResponse(data.message.content, 'gptOutput_id', 50); // Use `data.message` instead of `data.response`
                 outputForm.style.display = 'flex';
                 // document.getElementById('gptOutput_id').value = data.response; 
                 
