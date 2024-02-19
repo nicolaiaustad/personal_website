@@ -11,7 +11,7 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body);
     const openai = new OpenAIApi({
-      apiKey: "OPEN_AI_KEY",
+      api_key: "OPEN_AI_KEY",
     });
 
     const response = await openai.ChatCompletion.create({
