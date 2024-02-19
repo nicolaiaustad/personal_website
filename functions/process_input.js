@@ -11,10 +11,27 @@ exports.handler = async (event) => {
   const body = JSON.parse(event.body);
   const { userInput } = body;
 
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
+  // const configuration = new Configuration({
+  //   apiKey: process.env.OPENAI_API_KEY,
+  // });
+  const openai = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: 'text-curie-001',
+      prompt: myPrompt,
+      temperature: 1,
+      max_tokens: 100,
+      top_p: 1,
+      frequency_penalty: 0.5,
+      presence_penalty: 0,
+    }),
+  };
+
+  // const openai = new OpenAIApi(configuration);
 
   try {
     const completion = await openai.createCompletion({
