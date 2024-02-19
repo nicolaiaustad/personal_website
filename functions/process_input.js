@@ -1,5 +1,5 @@
 // functions/process-input.js
-const { Configuration, OpenAIApi } = require("openai");
+const {OpenAIApi } = require("openai");
 // const OpenAIApi = require('openai').default;
 
 
