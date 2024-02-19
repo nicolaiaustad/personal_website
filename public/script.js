@@ -131,7 +131,7 @@ function typeResponse(responseText, targetElementId, typingSpeed) {
             targetElement.value += responseText.charAt(i);
             i++;
             setTimeout(typeChar, typingSpeed);
-            console.log(targetElement.value);
+            // console.log(targetElement.value);
         }
     }
     typeChar(); 
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
                 const data = await response.json();
 
-                console.log(data.message); // Adjusted to match the structure returned by your serverless function
+                // console.log(data.message); // Adjusted to match the structure returned by your serverless function
                 document.getElementById('gptOutput_id').value = '';
                 typeResponse(data.message.content, 'gptOutput_id', 50); // Use `data.message` instead of `data.response`
                 outputForm.style.display = 'flex';
@@ -178,34 +178,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // // Optional: Add an event listener for the 'Submit Response' button if you need to handle the submission of the ChatGPT response separately
     document.getElementById('outputForm').addEventListener('submit', async function(e) {
-
         e.preventDefault();
-        const message = document.getElementById('gptOutput_id').value;
-    
+        const messageContent = document.getElementById('gptOutput_id').value;
+        
         try {
             const response = await fetch('/.netlify/functions/send_email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({gptOutput_id :message }),
+                // Ensure the keys match those expected by the serverless function
+                body: JSON.stringify({
+                    email: 'example@example.com', // Add appropriate value or handle dynamically
+                    subject: 'Message from Website Visitor', // Customize the subject or handle dynamically
+                    message: messageContent, // Use the correct key for the message
+                }),
             });
-    
+        
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            // Assuming gptOutput_id is an input or textarea, you can set its value to "Message sent"
+            // Feedback to the user that the message has been sent
             document.getElementById('gptOutput_id').value = "Appreciate it, have a productive day!";
             document.getElementById('submitResponse').style.display = 'none';
-
+    
         } catch (error) {
             console.error('Error:', error);
         }
-
-
     });
-
+    
 });
 

@@ -1,9 +1,5 @@
 // functions/process-input.js
 
-// Example of a Netlify serverless function using OpenAI
-// const { Configuration, OpenAIApi } = require('openai');
-// functions/process-input.js
-
 const { OpenAI } = require('openai'); // Import OpenAI from 'openai'
 
 exports.handler = async (event) => {
