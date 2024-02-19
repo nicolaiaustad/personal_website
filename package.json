@@ -11,5 +11,3 @@
     "start-api": "netlify-lambda serve functions"
   }
 }
-
-
