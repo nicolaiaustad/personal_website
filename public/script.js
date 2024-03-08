@@ -113,29 +113,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 function typeResponse(responseText, targetElementId, typingSpeed) {
     const targetElement = document.getElementById(targetElementId);
+    const submitButton = document.getElementById('submitButton'); // Adjusted to the correct button ID
+
+    if (!submitButton) {
+        console.error('Submit button not found');
+        return; // Exit the function if the button is not found
+    }
+
     let i = 0;
+    submitButton.disabled = true; // Disable the button
+
     function typeChar() {
         if (i < responseText.length) {
             targetElement.value += responseText.charAt(i);
             i++;
             setTimeout(typeChar, typingSpeed);
-            // console.log(targetElement.value);
+        } else {
+            submitButton.disabled = false; // Re-enable the button after typing is complete
         }
     }
-    typeChar(); 
+
+    typeChar();
 }
+
 
 
 
