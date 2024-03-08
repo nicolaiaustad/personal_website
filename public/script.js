@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // console.log(data.message); // Adjusted to match the structure returned by your serverless function
                 document.getElementById('gptOutput_id').value = '';
-                typeResponse(data.message.content, 'gptOutput_id', 50); // Use `data.message` instead of `data.response`
+                typeResponse(data.message.content, 'gptOutput_id', 20); // Use `data.message` instead of `data.response`
                 outputForm.style.display = 'flex';
                 // document.getElementById('gptOutput_id').value = data.response; 
                 
