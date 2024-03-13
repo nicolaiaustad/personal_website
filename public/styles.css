@@ -1,12 +1,18 @@
+
+
+
+
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    --background-color: #ebf5f7;
     font-family: Arial, sans-serif;
     /* overflow: hidden; */
     overflow: auto;
+    background-color: var(--background-color);
+    --hover-buttoncolor: #df5959;
 }
 
 
@@ -20,7 +26,7 @@ body, html {
     /* display: flex; */
     justify-content: center; 
     /* align-items: flex-start;  */
-    background-color: #ffffff; /* Fallback color */
+    background-color: var(--background-color); /* Fallback color */
     
     
     width: 100%; /* Ensure it spans the width of the viewport */
@@ -45,33 +51,85 @@ hr {
                 
     object-fit: cover;
     position: absolute;
-    top: 47%;
+    top: 53%;
     left: 75%;
     transform: translate(-50%, -50%);
     
 } 
 
+
+/* 
 .frame {
-  width: 320px; /* Box width */
-  height: 333px; /* Box height */
-  background-color: #faf1f1; /* Box color */
+  width: 320px; 
+  height: 333px; 
+  background-color: #faf1f1; 
   top: 40%;
   left: 64%;
   position: absolute;
-  box-shadow: 10px 40px 8px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+  box-shadow: 10px 40px 30px rgba(0, 0, 0, 0.6); 
   
-  /* display: flex;  */
-  /*  */
   
-  border-radius: 5px; /* Optional: for rounded corners */
-} 
+  border-radius: 5px; 
+}  */
+
+
+
+.triangle {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 39%;
+  left: 58%;
+  border-left: 500px solid transparent;
+  border-right: 0px solid transparent;
+  box-shadow: 15px 25px 30px rgba(0, 0, 0, 0.0); 
+  
+  /* border-bottom: 370px solid #ebcaca; */
+  border-bottom: 370px solid transparent;
+
+  border-radius: 20%;
+  z-index: 0;
+
+}
+
+.triangle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -250px;
+  width: 500px; /* Double the border-left value */
+  height: 370px; /* Same as border-bottom value */
+  /* background: linear-gradient(to bottom right, #ebcaca, #a8dadc); */
+  background: linear-gradient(to bottom right, #f0e0e0, #f15f5f);
+  box-shadow: 20px 25px 30px rgba(0, 0, 0, 0.6); 
+
+  transform: translateX(-50%);
+  z-index: -1;
+  border-radius: 20%;
+  
+}
+
 
 .experienceBall {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 1px solid #201e1e; 
-    background-color:  #f9e4e4;
+    /* border: 1px solid #201e1e;  */
+    /* background-color:  #fff1f1; */
+    /* background-color:  #ffffff; */
+    border: 1px solid rgb(0, 0, 0); 
+    background: linear-gradient(to bottom right, #ffffff, #df5959);
+    
+    /* background: radial-gradient(circle at center, #ffffff 0%, #d3abab71 40%, #ea5c5c63 60%, #ff00007c 100%); */
+    /* background: radial-gradient(circle at center, #ffdddd 0%, #ffd2d2 20%, #ffd5d5 40%, #ffb9b9 60%, #ffa3a3 80%, #ff9a9a 100%); */
+
+    /* background: radial-gradient(circle at center, #ffe5e5 0%, #ffdddd 25%, #ffd5d5 50%, #ffcccc 75%, #ffbbbb 100%); */
+
+    /* background: radial-gradient(circle closest-side, #ff5555 0%, #e60000 70%, #cc0000 100%); */
+    /* box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 2px 10px rgba(0, 0, 0, 0.3); */
+    /* border: 2px solid rgba(0, 0, 0, 0.6); */
+
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 /* 
     background: rgba(222, 57, 57, 0.3); 
@@ -184,7 +242,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   z-index: 1000;
   
@@ -207,7 +265,7 @@ hr {
   display: inline-block; /* Or 'block' if you prefer */
   padding: 8px 15px; /* Adjust padding as needed */
   margin-right: auto; /* Keeps it on the left */
-  background-color: #ffffff; /* Light grey background, adjust as needed */
+  background-color: var(--background-color); /* Light grey background, adjust as needed */
   border: 0px solid #dcdcdc; /* Light grey border, adjust as needed */
   border-radius: 5px; /* Rounded corners */
   color: #000000; /* Text color */
@@ -356,6 +414,8 @@ hr {
   align-items: center; /* Center the content */
   text-align: center; /* Center the text */
   margin-bottom: 233px;
+  background-color: var(--background-color);
+  
 }
 
 /* Container for the boxes to control their layout separately from the title */
@@ -375,8 +435,7 @@ hr {
   width: 300px; /* Square size */
   height: 300px; /* Square size */
   margin: 30px; /* Space between boxes */
-  display: flex;
-  justify-content: center; 
+  
   
   /* flex-wrap: wrap; */
   /* background-color: #f9e4e4; */
@@ -388,17 +447,75 @@ hr {
   transition: transform 0.4s ease, box-shadow 0.3s ease, top 2s linear;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), /* Optional shadow */
    -10px -10px 20px rgba(2, 2, 2, 0.0); 
-  /* position: relative; */
+  
+
+
+  display: flex; /* Use flexbox for centering content */
+  /* align-items: center;  */
+  justify-content: center; /* Center horizontally */
+  /* text-align: center;  */
+  position: relative; /* For absolute positioning of child elements */
+  overflow: hidden; /* Ensures text overflow is managed */
+  
 }
 
 
+.about-box p {
+  
+  opacity: 0; /* Make the text fully transparent initially */
+  transition: opacity 0.4s ease; /* Smooth transition for the opacity */
+  overflow: hidden;
+  margin: auto; /* Remove default margin */
+  position: relative; 
+  top: 10%; /* Center vertically */
+  left: 0%; /* Center horizontally */
+  /* transform: translate(-50%, -50%);  */
+  /* width: 100%;  */
+  width: 80%;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; 
+}
+
+
+.about-box:hover p {
+  
+  opacity: 1; /* Make the text fully visible on hover */
+  
+}
+
 .about-box:hover {
-  transform: scale(1.05); /* Adjust scaling factor as needed */
+  transform: scale(1.15); /* Adjust scaling factor as needed */
   font-size: 16px; /* Adjust font size as needed */
   /* box-shadow: 0 0 30px rgb(242, 4, 4); */
   z-index: 20; 
   background-image: linear-gradient(to bottom right, #f29fad, #f6eef1);
   
+}
+
+.reddot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* background-color: #d03b5b; */
+  background: linear-gradient(to bottom right, #eacccc, #df5959);
+
+  border: 0px solid #000000; /* Example border */
+  position: absolute;
+  top: 160px;
+  left: 120px;
+  /* top: 50%;
+  left: 50%; */
+  z-index: 100;
+  /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+  transform: translate(0%, -50%);
+}
+
+.about-box:hover .reddot {
+  transform: translateY(130px) scale(0.5);
+  opacity: 0;
 }
 
 h2 {
@@ -444,7 +561,7 @@ p {
 
 
 .cv-highlights-section {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   padding: 0px;
   top: 10%;
   position: relative;
@@ -513,6 +630,8 @@ p {
   /* box-shadow: 0 0 30px rgb(242, 4, 4); */
   z-index: 20; 
   background-image: linear-gradient(to bottom right, #f29fad, #f6eef1);
+  /* background-image: linear-gradient(to bottom right, #ebcaca, #a8dadc); */
+
   
 }
 
@@ -587,10 +706,25 @@ p {
 }
 
 
+.contact-page {
+  background-color: var(--background-color);
+  padding: 0px;
+  /* top: 10%; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%;
+  text-align: center;
+  /* margin-bottom: 200px; */
+}
+
+
 .contact-section {
   padding: 60px 40px; 
   padding-top: 5%;
-  background-color: #efe9e9;
+  /* background-color: red; */
+  
   text-align: center;
   box-shadow: 0 2px 15px rgba(0,0,0,0.4);
   border-radius: 10px;
@@ -601,6 +735,9 @@ p {
 
   position: relative;
 }
+
+
+
 /* 
 .form-group textarea {
   width: calc(100% - 20px);
@@ -674,7 +811,7 @@ p {
 }
 
 .contact-info a:hover {
-  color: #dd4545; /* Darker shade of blue for hover state */
+  color:var(--hover-buttoncolor); /* Darker shade of blue for hover state */
 }
 
 
@@ -683,8 +820,11 @@ p {
   
   width: 80%;
   margin: auto;
-  border-color: rgb(255, 255, 255);
+  /* border-color: rgb(255, 255, 255); */
+  border-color: var(--background-color);
+
   background-color:#000000;
+  
   opacity: 0.1;
 }
 
@@ -735,11 +875,12 @@ p {
   font-family: 'DM Sans', sans-serif;
   font-weight: 100;
   box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
   
 }
 
 .submit-btn:hover {
-  background-color: #da7676;
+  background-color: var(--hover-buttoncolor);
 }
 
 
@@ -791,7 +932,7 @@ p {
 }
 
 .submit_response:hover {
-  background-color: #da7676;
+  background-color: var(--hover-buttoncolor);
 }
 
 .contact-section .highlight {
