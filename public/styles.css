@@ -486,7 +486,7 @@ hr {
 }
 
 .about-box:hover {
-  transform: scale(1.15); /* Adjust scaling factor as needed */
+  transform: scale(1.15);
   font-size: 16px; /* Adjust font size as needed */
   /* box-shadow: 0 0 30px rgb(242, 4, 4); */
   z-index: 20; 
@@ -504,17 +504,39 @@ hr {
   border: 0px solid #000000; /* Example border */
   position: absolute;
   top: 160px;
-  left: 120px;
-  /* top: 50%;
-  left: 50%; */
+  /* left: 120px; */
+  /* top: 50%; */
+  left: 116px;
   z-index: 100;
   /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
   transition: transform 0.5s ease, opacity 0.5s ease; 
   transform: translate(0%, -50%);
 }
 
+
+.reddot1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* background-color: #d03b5b; */
+  background: linear-gradient(to bottom right, #eacccc, #df5959);
+
+  border: 0px solid #000000; /* Example border */
+  position: absolute;
+  top: 190px;
+  /* left: 120px; */
+  /* top: 50%; */
+  left: 50%;
+  z-index: 100;
+  /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+  transform: translate(-50%, -50%);
+}
+
 .about-box:hover .reddot {
   transform: translateY(130px) scale(0.5);
+  /* transform: translate(-50%, 120%) scale(0.5); */
+
   opacity: 0;
 }
 
@@ -926,6 +948,8 @@ p {
   font-family: 'DM Sans', sans-serif;
   font-weight: 100;
   box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+
   
   /* line-height: 50px; */
 
