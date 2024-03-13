@@ -1,5 +1,20 @@
 
 
+@media only screen and (min-width: 601px) and (max-width: 1920px) {
+  
+}
+
+@media only screen and (max-width: 480px) {
+      
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar ul {
+      flex-direction: column;
+      padding: 0;
+  }
+
+}
 
 
 body, html {
@@ -13,6 +28,7 @@ body, html {
     overflow: auto;
     background-color: var(--background-color);
     --hover-buttoncolor: #df5959;
+    
 }
 
 
@@ -29,23 +45,33 @@ body, html {
     background-color: var(--background-color); /* Fallback color */
     
     
-    width: 100%; /* Ensure it spans the width of the viewport */
+    max-width: 100%; /* Ensure it spans the width of the viewport */
 }
 
 hr {
   height:1px;
   border-width:0px;
-  margin-top: -5px;
+  margin-top: 50px;
+  /* margin-top: -2%; */
+
   border-color: rgb(255, 255, 255);
   background-color:#000000;
   opacity: 0.1;
 }
 
 
+.preload-image {
+  background-image: url('public/NicolaiSofaCrop.png');
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 
 .centeredImage {
-    max-width: 550px; 
-    max-height: 550px; 
+    /* max-width: 550px; 
+    max-height: 550px;  */
+    max-width: 37%;
+    height: auto;
     
     box-shadow: 10px 100px 10px  rgba(0, 0, 0, 0.0);
                 
@@ -54,15 +80,24 @@ hr {
     top: 53%;
     left: 75%;
     transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 480px) {
+      /* width: 34%; 
+      height: 35%; 
+      top: 47%;
+      left: 58%;
+      position: absolute; */
+      max-width: 45%;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      
+    
+      
+    }
     
 } 
 
-.preload-image {
-  background-image: url('public/NicolaiSofaCrop.png');
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
 
 
 
@@ -82,6 +117,43 @@ hr {
 
 
 
+.frame2 {
+  /* width: 34%; 
+  height: 35%;  */
+
+  width: 34vw; 
+  /* height: 35vh;  */
+  aspect-ratio: 34/22;
+  background-color: var(--background-color); 
+  border: 1px solid rgba(0, 0, 0, 0.078);
+  top: 43%;
+  left: 58%;
+  position: absolute;
+  box-shadow: 10px 40px 30px rgba(0, 0, 0, 0.6); 
+  border-radius: 40px; 
+
+@media only screen and (max-width: 480px) {
+  /* width: 34%; 
+  height: 35%; 
+  top: 47%;
+  left: 58%;
+  position: absolute; */
+  width: 42vw;
+  top: 37%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.6); 
+
+  border-radius: 20px;
+}
+
+
+}
+  
+
+
+/* 
+
 .triangle {
   position: absolute;
   width: 0px;
@@ -92,11 +164,29 @@ hr {
   border-right: 0px solid transparent;
   box-shadow: 15px 25px 30px rgba(0, 0, 0, 0.0); 
   
-  /* border-bottom: 370px solid #ebcaca; */
-  border-bottom: 370px solid transparent;
+  
+  border-bottom: 20% solid transparent;
 
   border-radius: 20%;
   z-index: 0;
+
+  @media only screen and (max-width: 480px) {
+
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 39%;
+  left: 58%;
+  border-left: 50% solid transparent;
+  border-right: 0px solid transparent;
+  box-shadow: 15px 25px 30px rgba(0, 0, 0, 0.0); 
+  
+  
+  border-bottom: 20% solid transparent;
+
+  border-radius: 20%;
+  z-index: 0;
+  }
 
 }
 
@@ -105,17 +195,21 @@ hr {
   position: absolute;
   top: 0;
   left: -250px;
-  width: 500px; /* Double the border-left value */
-  height: 370px; /* Same as border-bottom value */
-  /* background: linear-gradient(to bottom right, #ebcaca, #a8dadc); */
-  background: linear-gradient(to bottom right, #f0e0e0, #f15f5f);
-  box-shadow: 20px 25px 30px rgba(0, 0, 0, 0.6); 
-
+  width: 500px; 
+  height: 370px; 
+  
+  background: var(--background-color);
+  box-shadow: 20px 25px 30px rgba(0, 0, 0, 0.4); 
+  
   transform: translateX(-50%);
   z-index: -1;
   border-radius: 20%;
+
+
   
-}
+} */
+
+
 
 
 .experienceBall {
@@ -168,9 +262,18 @@ hr {
   width: 180px;
   height: 180px;
   
-  top: 350px; /* Below Ball 3 */
+  top: 350px; 
   left: 260px;
   font-size: 40px;
+
+  @media screen and (max-width: 480px){
+    width: 120px;
+    height: 120px;
+    top: 70%; 
+    left: 20%;
+    font-size: 20px;
+    
+  }
 }
 
 
@@ -180,6 +283,15 @@ hr {
   top: 510px; /* Directly to the right of Ball 3 */
   left: 360px; /* Ball 3 width + a bit more */
   font-size: 27px;
+
+  @media screen and (max-width: 480px){
+    width: 100px;
+    height: 100px;
+    top: 80%; 
+    left: 39%;
+    font-size: 13px;
+    
+  }
 }
 
 
@@ -189,6 +301,16 @@ hr {
   top: 411px; /* Start near the top */
   left: 440px; /* Start near the left edge */
   font-size: 25px;
+
+
+  @media screen and (max-width: 480px){
+    width: 75px;
+    height: 75px;
+    top: 72.5%; 
+    left: 48%;
+    font-size: 16px;
+    
+  }
 
 }
 
@@ -200,6 +322,15 @@ hr {
   left: 258px; /* Enough space to not overlap with Ball 1 */
   font-size: 21px;
 
+  @media screen and (max-width: 480px){
+    width: 66px;
+    height: 66px;
+    top: 83%; 
+    left: 23.5%;
+    font-size: 14px;
+    
+  }
+
 }
 
 
@@ -209,6 +340,15 @@ hr {
   top: 333px; /* Align with Balls 1 and 4 */
   left: 425px; 
   font-size: 23px;
+
+  @media screen and (max-width: 480px){
+    width: 52px;
+    height: 52px;
+    top: 67.5%; 
+    left: 44%;
+    font-size: 15px;
+    
+  }
 
 }
 
@@ -355,6 +495,19 @@ hr {
   color: #000000;
   font-family: 'DM Sans', sans-serif;
   font-weight:700;
+  white-space: nowrap;
+
+  @media screen and (max-width: 480px){
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  color: #000000;
+  font-family: 'DM Sans', sans-serif;
+  font-weight:700;
+  text-align: center;
+  }
 }
 
 #staticTitle .highlight {
@@ -374,6 +527,20 @@ hr {
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     font-weight: 600;
+    white-space: nowrap;
+
+    @media screen and (max-width: 480px){
+      position: absolute;
+      top: 24%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8em;
+      color: #000000;
+      font-family: 'DM Sans', sans-serif;
+      font-weight:600;
+      text-align: center;
+      
+    }
 }
 
 /* 
@@ -394,6 +561,11 @@ hr {
   margin-bottom: 3px;
   opacity: 1; /* Fully visible */
   animation: blink 1.1s infinite; 
+  @media screen and (max-width: 480px){
+    width: 20px;
+    height: 20px;
+    
+  }
 }
 
 
@@ -405,6 +577,14 @@ hr {
   text-align: center; /* Center the title */
   font-size: 2em; /* Adjust size as needed */
   color: #000000; /* Title color */
+
+  @media screen and (max-width: 480px){
+    
+    width: auto;
+    
+    
+  }
+  
 }
 
 
@@ -970,3 +1150,23 @@ p {
 .contact-section .highlight {
   color: #ff0000; /* Change color of 'austad' */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
