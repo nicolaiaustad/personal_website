@@ -57,6 +57,14 @@ hr {
     
 } 
 
+.preload-image {
+  background-image: url('public/NicolaiSofaCrop.png');
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+
 
 /* 
 .frame {
