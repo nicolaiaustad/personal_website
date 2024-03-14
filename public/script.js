@@ -120,16 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navUL = document.querySelector('.navbar ul');
-
+  
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navUL.classList.toggle('show');
+      hamburger.classList.toggle('active');
+      navUL.classList.toggle('show');
     });
-});
+  });
 
 
 
