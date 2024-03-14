@@ -562,21 +562,23 @@ hr {
     transition: all 0.9s ease-in-out;
   }
   
-  
+  .navbar {
+    position: relative; 
+  }
 
   .navbar ul {
-    position: fixed;
-    top: 0;
-    padding-top: 2%;
-    margin-top: 18%;
+    position: absolute;
+    top: 100%;
+    /* padding-top: 2%;
+    margin-top: 18%; */
     
     padding-left: 0px;
     right: 0;
-    height: 100%;
+    height: 90vh;
     width: 0%; /* Initially set to 0 */
     overflow: hidden;
     background-color: var(--background-color); /* Use your background color */
-    transition: width 0.7s ease;
+    transition: width 0.5s ease;
     transform: translateX(100%); /* Initially hidden off-screen */
     z-index: 2; /* Ensure it's above other content */
   }
@@ -590,7 +592,10 @@ hr {
 
   .navbar ul li a {
     font-size: 1.5em;
-    padding: 20px;
+    /* margin-top: 10%;
+    margin-left: 5%;
+    margin-bottom: 10%; */
+    padding: 15px;
     display: block;
     width: 100%;
     /* border-bottom: 1px solid #ccc;  */
@@ -599,10 +604,10 @@ hr {
   .navbar ul.show {
     display: flex; 
     flex-direction: column; 
-    /* justify-content: end; */
+    
     border-bottom: 1px solid #cccccc87;
     border-top: 1px solid #cccccc82;
-    transform: translateX(0);
+    transform: translateX(-50%);
     transform: scaleY(1);
     opacity: 1;
     border-left: 2px solid #cccccc82;
