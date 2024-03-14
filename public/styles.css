@@ -786,6 +786,11 @@ hr {
   justify-content: center; /* Center boxes horizontally */
   margin-top: 20px; /* Space between title and boxes */
 
+  @media screen and (max-width: 480px){
+    flex-direction: column;
+    align-items: center;
+    
+  }
 
   /* max-width: 1000px; */
    /* flex-wrap: wrap; */
@@ -907,6 +912,10 @@ h2 {
   font-weight:700;
   text-align: center;
 
+  @media screen and (max-width: 480px){
+    font-size: 50px;
+    
+  }
   
 }
 
@@ -919,6 +928,10 @@ h2 {
   text-align: center;
   position: relative;
 
+  @media screen and (max-width: 480px){
+    font-size: 30px;
+    
+  }
 
 }
 
@@ -944,8 +957,8 @@ p {
 
 .cv-highlights-section {
   background-color: var(--background-color);
-  padding: 0px;
-  top: 10%;
+  
+  top: 3%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -953,49 +966,97 @@ p {
   width: 100%;
   text-align: center;
   margin-bottom: 200px;
+  
+
+  @media screen and (max-width: 480px){
+    top: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content vertically */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 200px;
+    
+  }
+  
+}
+.cv-highlights-section h2 {
+  font-size: 60px; /* Adjust size as needed */
+  color: #000000; /* Adjust color as needed */
+  font-family: 'DM Sans', sans-serif;
+  font-weight:700;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
+
+.cv-columns {
+  display: flex;
+  /* justify-content: space-around; */
+  width: 90%;
+  gap: -50px;
+  
+  
+
+}
+
+/* 
 .column-titles {
   display: flex;
-  width: 85%; /* Match the .cv-boxes width */
+  width: 85%; 
   justify-content: space-around;
   padding-top: 1%;
   padding-bottom: 2%;
-}
+} */
 
-.column-title {
+#exp {
   
   width: 100%; /* Match the .cv-column width */
   text-align: center;
-  font-size: 35px; /* Adjust as needed */
+  font-size: 45px; /* Adjust as needed */
   color: #2e2525; /* Adjust color as needed */
-  margin: 0px 0px 0px 0; 
+  margin-bottom: 2%;
+
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
 }
 
-.cv-boxes {
+#edu {
+  
+  width: 100%; /* Match the .cv-column width */
+  text-align: center;
+  font-size: 45px; /* Adjust as needed */
+  color: #2e2525; /* Adjust color as needed */
+  margin-bottom: 2%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.cv-boxes_exp, .cv-boxes_edu{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Evenly space the boxes horizontally */
+  align-items: center;
+  flex-direction: column;
   gap: 30px; /* Space between boxes */
-  width: 80%;
+  width: calc(60% - 30px);
   margin-top: 20px; /* Space between title and boxes */
 
 }
 
 .cv-box {
-  width: calc(50% - 30px); /* Adjust width for 2 columns, accounting for gap */
+  width: 82%; 
   min-height: 300px; /* Minimum height for each box */
   
-  padding: 0px;
+  padding: 0%;
   box-sizing: border-box; /* Include padding and border in the box's width */
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; */
   margin-bottom: 30px; /* Space between rows */
+  
   position: relative;
   background-image: linear-gradient(to bottom right, #efe3e3, #ffffff);
   border-radius: 5%;
@@ -1003,7 +1064,12 @@ p {
   transition: transform 0.4s ease, box-shadow 0.3s ease, top 2s linear;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), /* Optional shadow */
    -10px -10px 20px rgba(2, 2, 2, 0.0); 
+
+  
+
+   
 }
+
 
 
 .cv-box:hover {
@@ -1017,11 +1083,7 @@ p {
   
 }
 
-@media (max-width: 768px) {
-  .cv-box {
-      width: 100%; /* Full width for smaller screens */
-  }
-}
+
 
 
 
@@ -1088,6 +1150,88 @@ p {
 }
 
 
+@media screen and (max-width: 480px){
+  .cv-highlights-section h2 {
+    font-size: 50px; /* Adjust size as needed */
+    color: #000000; /* Adjust color as needed */
+    font-family: 'DM Sans', sans-serif;
+    font-weight:700;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .cv-columns {
+    flex-direction: column;
+    gap: 0; /* Remove gap for mobile layout */
+    
+  }
+
+  .cv-boxes_exp, .cv-boxes_edu {
+    width: 100%; /* Full width for mobile layout */
+  }
+
+  .cv-box {
+     /* Slightly smaller width for mobile to add some margin */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    margin-bottom: 0px;
+  }
+
+  #exp, #edu {
+    font-size: 35px; /* Adjust as needed */
+    color: #2e2525; /* Adjust color as needed */
+    margin-top: 5%;
+    margin-bottom: 2%;
+  }
+
+  .cv-box h5 {
+    font-size: 15px; /* Adjust as needed */
+    color: #000000; /* Adjust color as needed */
+    margin: 0px 0px 0px 0; 
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+  }
+
+  .cv-box h4 {
+    font-size: 18px; /* Adjust as needed */
+    color: #993434; /* Adjust color as needed */
+    margin: 0px 0px 0px 0; 
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: 25%;
+    left: 6%;
+    text-align: left;
+    padding-bottom: 15px;
+  }
+
+
+  .cv-box p{
+    font-size: 12px; /* Adjust as needed */
+    color: #594b4b; /* Adjust color as needed */
+    margin-top: 5%; 
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    text-align: left;
+    max-width: 80%;
+  }
+
+  
+}
+
+
+
+
+
 .contact-page {
   background-color: var(--background-color);
   padding: 0px;
@@ -1120,42 +1264,8 @@ p {
 
 
 
-/* 
-.form-group textarea {
-  width: calc(100% - 20px);
-  padding: 15px;
-  margin-top: 0px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  resize: vertical; 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-} */
-/* 
-#contact-form button {
-  padding: 12px 30px;
-  margin-top: 20px;
-  background-color: #db5034;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  outline: none;
-} */
-/* 
-.output_box {
-  background-color: #ecbf94;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  position: relative;
-  
-}
+
+
 
 
 #contact-form button:hover {
@@ -1325,10 +1435,86 @@ p {
 
 
 
+@media screen and (max-width: 480px) {
+  
+  
+  .contact-section {
+    
+    /* background-color: red; */
+    
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 32% auto;
+    position: relative;
 
+    
+  }
 
+  .contact-info {
+    margin-top: 0px;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    
+  
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    padding: 20px 0px; /* Adjust as needed */
+  }
+  
+  .contact-info h6 {
+    color: #333; /* Subtle, professional text color */
+    font-size: 12px; /* Matching the form's text size for consistency */
+    margin-top: 0;
+    font-weight: 200;
+  }
+  
+  
 
+  .chat_interface {
+    
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .chat_form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-field {
+    width: 100%;
+
+    
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submit-btn {
+    margin-top: 10px;
+    width: 50%;
+    
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .output_form {
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gptOutput {
+    width: 100%;
+  }
+  
+}
 
 
 
