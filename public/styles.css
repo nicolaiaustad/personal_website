@@ -395,7 +395,9 @@ hr {
   z-index: 1000;
   
 }
- .navbar ul{
+
+
+.navbar ul{
   list-style-type: none;
   background-color: transparent;
   padding: 20px;
@@ -407,6 +409,113 @@ hr {
   
   
 }
+
+
+
+@media only screen and (max-width: 480px) {
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: var(--hover-buttoncolor);
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar {
+    position: relative; 
+    height: auto; 
+    transition: max-height 0.3s ease; 
+/* 
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.5s ease; */
+
+  }
+/* 
+  .hamburger-menu {
+    display: block;
+  } */
+
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    background-color: var(--background-color);
+    display: none; /* Initially hidden */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Optional: add shadow for better visibility */
+    z-index: 1000;
+
+    /* overflow: hidden;
+    max-height: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+    z-index: 1000; */
+
+  }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+    /* display: block; Ensure list items are always visible */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    /* border-bottom: 2px solid #ccc;  */
+    
+  }
+
+  .navbar ul li a {
+    display: block;
+    width: 80%;
+    padding: 15px; /* Add padding for tap targets */
+  }
+
+  .navbar ul.show {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: end;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+
+    max-height: 100%; 
+    opacity: 1; 
+    visibility: visible; 
+  }
+
+  .hamburger-menu.active + .navbar ul {
+    display: block; 
+  }
+
+
+/* Keep the hamburger transform styles unchanged */
+
+/* Transform hamburger into 'X' when active */
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+}
+
 
 
 .website-link {

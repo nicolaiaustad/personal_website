@@ -107,9 +107,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    //     document.querySelector('.navbar ul li').classList.toggle('show');
+    // });
+
+    // document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    //     this.classList.toggle('active');
+    //     document.querySelector('.navbar ul').classList.toggle('show');
+    // });
+    
+
 });
 
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navUL = document.querySelector('.navbar ul');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navUL.classList.toggle('show');
+    });
+});
 
 
 
