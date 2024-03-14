@@ -258,6 +258,25 @@ hr {
 
 }
 
+.ball_container {
+  @media screen and (max-width: 480px){
+    position: relative;
+    width: 80vw; /* Adjust based on your design */
+    height: 80vw; /* Same as width to maintain aspect ratio */
+    max-width: 230px; /* Maximum size */
+    max-height: 230px; /* Maximum size */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-wrap: wrap; /* Allow the balls to wrap inside the container */
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Or any color */
+    z-index: 0;
+    top: 65%;
+  }
+  
+}
+
 #ball1{
   width: 180px;
   height: 180px;
@@ -267,10 +286,20 @@ hr {
   font-size: 40px;
 
   @media screen and (max-width: 480px){
-    width: 18vh;
+    /* width: 18vh;
     height: 18vh;
     top: 65%; 
     left: 18%;
+    font-size: 27px; */
+    
+    /* width: 120px;
+    height: 120px; */
+    width: 55%;
+    height: 55%;
+    /* top: 65%; 
+    left: 18%; */
+    top: 20%;
+    left: 0;
     font-size: 27px;
     
   }
@@ -285,10 +314,18 @@ hr {
   font-size: 27px;
 
   @media screen and (max-width: 480px){
-    width: 15vh;
+    /* width: 15vh;
     height: 15vh;
     top: 80.5%; 
     left: 40%;
+    font-size: 20px; */
+
+    width: 42%;
+    height: 42%;
+    /* top: 80.5%; 
+    left: 40%; */
+    top: 58%;
+    left: 44%;
     font-size: 20px;
     
   }
@@ -304,10 +341,18 @@ hr {
 
 
   @media screen and (max-width: 480px){
-    width: 12vh;
+    /* width: 12vh;
     height: 12vh;
     top: 70%; 
     left: 56%;
+    font-size: 20px; */
+
+    width: 38%;
+    height: 38%;
+    /* top: 70%; 
+    left: 56%; */
+    top: 20%; 
+    left: 54%;
     font-size: 20px;
     
   }
@@ -323,12 +368,21 @@ hr {
   font-size: 21px;
 
   @media screen and (max-width: 480px){
-    width: 10vh;
+    /* width: 10vh;
     height: 10vh;
     top: 82.5%; 
     left: 18%;
     font-size: 16px;
-    
+     */
+    width: 30%;
+    height: 30%;
+    /* top: 82.5%; 
+    left: 18%; */
+    top: 75%; 
+    left: 15%;
+
+    font-size: 16px;
+
   }
 
 }
@@ -342,10 +396,18 @@ hr {
   font-size: 23px;
 
   @media screen and (max-width: 480px){
-    width: 9vh;
+    /* width: 9vh;
     height: 9vh;
     top: 61.5%; 
     left: 51.5%;
+    font-size: 17px; */
+
+    width: 25%;
+    height: 25%;
+    /* top: 61.5%; 
+    left: 51.5%; */
+    top: 3%; 
+    left: 39%;
     font-size: 17px;
     
   }
