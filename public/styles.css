@@ -87,8 +87,8 @@ hr {
       top: 47%;
       left: 58%;
       position: absolute; */
-      max-width: 45%;
-      top: 30%;
+      max-width: 70%;
+      top: 26%;
       left: 50%;
       transform: translateX(-50%);
       
@@ -138,8 +138,8 @@ hr {
   top: 47%;
   left: 58%;
   position: absolute; */
-  width: 42vw;
-  top: 37%;
+  width: 67vw;
+  top: 36%;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 5px 20px 20px rgba(0, 0, 0, 0.6); 
@@ -267,11 +267,11 @@ hr {
   font-size: 40px;
 
   @media screen and (max-width: 480px){
-    width: 120px;
-    height: 120px;
-    top: 70%; 
-    left: 20%;
-    font-size: 20px;
+    width: 18vh;
+    height: 18vh;
+    top: 65%; 
+    left: 18%;
+    font-size: 27px;
     
   }
 }
@@ -285,11 +285,11 @@ hr {
   font-size: 27px;
 
   @media screen and (max-width: 480px){
-    width: 100px;
-    height: 100px;
-    top: 80%; 
-    left: 39%;
-    font-size: 13px;
+    width: 15vh;
+    height: 15vh;
+    top: 80.5%; 
+    left: 40%;
+    font-size: 20px;
     
   }
 }
@@ -304,11 +304,11 @@ hr {
 
 
   @media screen and (max-width: 480px){
-    width: 75px;
-    height: 75px;
-    top: 72.5%; 
-    left: 48%;
-    font-size: 16px;
+    width: 12vh;
+    height: 12vh;
+    top: 70%; 
+    left: 56%;
+    font-size: 20px;
     
   }
 
@@ -323,11 +323,11 @@ hr {
   font-size: 21px;
 
   @media screen and (max-width: 480px){
-    width: 66px;
-    height: 66px;
-    top: 83%; 
-    left: 23.5%;
-    font-size: 14px;
+    width: 10vh;
+    height: 10vh;
+    top: 82.5%; 
+    left: 18%;
+    font-size: 16px;
     
   }
 
@@ -342,11 +342,11 @@ hr {
   font-size: 23px;
 
   @media screen and (max-width: 480px){
-    width: 52px;
-    height: 52px;
-    top: 67.5%; 
-    left: 44%;
-    font-size: 15px;
+    width: 9vh;
+    height: 9vh;
+    top: 61.5%; 
+    left: 51.5%;
+    font-size: 17px;
     
   }
 
@@ -428,13 +428,19 @@ hr {
   }
   
   .navbar {
-    position: relative; 
+    /* position: relative; 
     height: auto; 
-    transition: max-height 0.3s ease; 
-/* 
-    position: relative;
-    overflow: hidden;
-    transition: max-height 0.5s ease; */
+    transition: max-height 0.5s ease;  */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* overflow: hidden; */
+    transition: all 0.3s ease-in-out;
+    /* overflow: hidden; */
+    
+    
 
   }
 /* 
@@ -457,13 +463,16 @@ hr {
     box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Optional: add shadow for better visibility */
     z-index: 1000;
 
-    /* overflow: hidden;
-    max-height: 0; 
+    
+    
     opacity: 0;
-    visibility: hidden;
+   
     transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0.5s;
-    z-index: 1000; */
+    z-index: 1000;
 
+
+    transform-origin: top;
+    transform: scaleY(0);
   }
 
   .navbar ul li {
@@ -486,12 +495,11 @@ hr {
     display: flex; 
     flex-direction: row; 
     justify-content: end;
-    border-bottom: 2px solid #ccc;
-    border-top: 2px solid #ccc;
+    border-bottom: 1px solid #cccccc87;
+    border-top: 1px solid #cccccc82;
 
-    max-height: 100%; 
-    opacity: 1; 
-    visibility: visible; 
+    transform: scaleY(1);
+    opacity: 1;
   }
 
   .hamburger-menu.active + .navbar ul {
@@ -608,7 +616,7 @@ hr {
 
   @media screen and (max-width: 480px){
   position: absolute;
-  top: 18%;
+  top: 12%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2em;
@@ -640,7 +648,7 @@ hr {
 
     @media screen and (max-width: 480px){
       position: absolute;
-      top: 24%;
+      top: 18%;
       left: 50%;
       transform: translateX(-50%);
       font-size: 0.8em;
