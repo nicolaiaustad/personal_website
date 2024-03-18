@@ -860,24 +860,61 @@ hr {
   
 }
 
+.circ {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; */
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #eacccc, #df5959);
+  z-index: 10;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  border: 0px solid #3b3939;
+  box-shadow: 0px 0px 20px rgba(16, 16, 16, 0.3);
+}
 .reddot {
-  width: 60px;
+  /* width: 60px;
   height: 60px;
   border-radius: 50%;
-  /* background-color: #d03b5b; */
+ 
   background: linear-gradient(to bottom right, #eacccc, #df5959);
 
-  border: 0px solid #000000; /* Example border */
+  border: 0px solid #000000; 
   position: absolute;
   top: 160px;
-  /* left: 120px; */
-  /* top: 50%; */
   left: 116px;
   z-index: 100;
-  /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
+ 
   transition: transform 0.5s ease, opacity 0.5s ease; 
-  transform: translate(0%, -50%);
-}
+  transform: translate(0%, -50%); */
+
+
+  
+  width: 35%; 
+  height: 35%; 
+  border-left: 15px solid rgb(53, 51, 51);
+  /* border-right: 30px solid transparent; */
+  border-bottom: 15px solid rgb(53, 51, 51); /* Chevron color */
+  rotate: -45deg;
+  border-radius: 20%;
+  position: relative;
+  top: 18%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  transition: transform 0.8s ease, opacity 0.5s ease;
+  }
+  
+
+
+
 
 
 .reddot1 {
@@ -899,11 +936,37 @@ hr {
   transform: translate(-50%, -50%);
 }
 
-.about-box:hover .reddot {
-  transform: translateY(130px) scale(0.5);
-  /* transform: translate(-50%, 120%) scale(0.5); */
+.about-box:hover .circ {
+  /* transform: translateY(130px) scale(0.5); */
+  transform: translate(-50%, 100%) scale(0.5);
 
   opacity: 0;
+}
+
+@media screen and (max-width: 480px){
+  .circ, .reddot {
+    display: none;  /* Hides the elements on mobile devices */
+  }
+
+  .about-box p {
+    display: block; /* Ensure the paragraph is always visible */
+    font-size: 13px; /* Adjust font size if needed */
+    color: #594b4b;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    max-width: 90%;
+    /* margin: 10px 0px -50px 0; */
+    margin-left: 10%;
+    margin-right: 5%;
+    text-align: left; /* Ensures the text is aligned to the left */
+    visibility: visible; /* Ensures the paragraph is visible */
+    opacity: 1; /* Ensures the paragraph is fully opaque */
+  }
+  
+  .about-box {
+    max-height: 260px;
+}
+
 }
 
 h2 {
@@ -1269,38 +1332,61 @@ p {
 
 
 
-#contact-form button:hover {
-  background-color: #e29774;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-} */
-
-
 .contact-info {
-  margin-top: 0px;
-  /* justify-content: center; */
+  margin-top: -5%;
+  flex-direction: row;
   font-family: 'DM Sans', sans-serif;
   
 
   display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
   justify-content: space-between;
-  width: 90%;
-  position: absolute;
+  
+  
+  max-width: 100%;
+  /* width: 100%; */
+  position: relative;
   top: 0;
-  padding: 20px 0px; /* Adjust as needed */
+  padding: 0px 0px; /* Adjust as needed */
+
 }
+
+.mail {
+  flex: 1;
+  text-align: start;
+  width: 50%;
+  
+}
+
+.phone {
+  flex: 1;
+  text-align: end;
+  width: 50%;
+  
+}
+
+
 
 .contact-info h6 {
   color: #333; /* Subtle, professional text color */
   font-size: 16px; /* Matching the form's text size for consistency */
-  margin-top: 0;
-  font-weight: 200;
+  
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-direction: row;
+
+  font-weight: 600;
 }
 
 .contact-info a {
   color: #000000; /* A color that stands out, yet fits the overall design */
   text-decoration: none; /* Removes the underline to keep it clean */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
+  flex-direction: row;
+  
 }
 
 .contact-info a:hover {
@@ -1353,6 +1439,15 @@ p {
 
   
 }
+
+
+
+#contact-form button:hover {
+  background-color: #e29774;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+} 
+
 
 .submit-btn {
   margin-top: 10px;
@@ -1465,12 +1560,12 @@ p {
     width: 80%;
     position: absolute;
     top: 0;
-    padding: 20px 0px; /* Adjust as needed */
+    padding: 20px 0px; 
   }
   
   .contact-info h6 {
-    color: #333; /* Subtle, professional text color */
-    font-size: 12px; /* Matching the form's text size for consistency */
+    color: #333; 
+    font-size: 12px; 
     margin-top: 0;
     font-weight: 200;
   }
@@ -1503,6 +1598,7 @@ p {
     background-color: #ffffff;
     font-family: 'DM Sans', sans-serif;
     font-weight: 100;
+    font-size: 12px;
 
     flex-direction: column;
   
